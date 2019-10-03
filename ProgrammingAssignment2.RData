@@ -1,0 +1,44 @@
+> source("C:/Users/sandeep.singh/Documents/R/makeCacheMatrix.R")
+> source("C:/Users/sandeep.singh/Documents/R/cacheSolve.R")
+> Sandeep_Mat <- makeCacheMatrix(matrix(1:4, 2, 2))
+> Sandeep_Mat$get()
+     [,1] [,2]
+[1,]    1    3
+[2,]    2    4
+> Sandeep_Mat$getInverse()
+NULL
+> cacheSolve(Sandeep_Mat)
+     [,1] [,2]
+[1,]   -2  1.5
+[2,]    1 -0.5
+> cacheSolve(Sandeep_Mat)
+getting cached data
+     [,1] [,2]
+[1,]   -2  1.5
+[2,]    1 -0.5
+> Sandeep_Mat$getInverse()
+     [,1] [,2]
+[1,]   -2  1.5
+[2,]    1 -0.5
+> Sandeep_Mat$set(matrix(c(2, 2, 1, 4), 2, 2))
+> Sandeep_Mat$get()
+     [,1] [,2]
+[1,]    2    1
+[2,]    2    4
+> Sandeep_Mat$getInverse()
+NULL
+> cacheSolve(Sandeep_Mat)
+           [,1]       [,2]
+[1,]  0.6666667 -0.1666667
+[2,] -0.3333333  0.3333333
+> cacheSolve(Sandeep_Mat)
+getting cached data
+           [,1]       [,2]
+[1,]  0.6666667 -0.1666667
+[2,] -0.3333333  0.3333333
+> Sandeep_Mat$getInverse()
+           [,1]       [,2]
+[1,]  0.6666667 -0.1666667
+[2,] -0.3333333  0.3333333
+
+
